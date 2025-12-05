@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Transcript Insights</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Call Transcript Insights</h1>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <p class="subtitle">Paste your Notion meeting transcripts and get insights</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <label for="call-date">Date</label>
+                <input type="date" id="call-date" required>
+            </div>
+            <div class="input-group">
+                <label for="company-name">Company</label>
+                <input type="text" id="company-name" placeholder="Enter company name..." required>
+            </div>
+            <div class="input-group">
+                <label for="transcript">Transcript</label>
+                <textarea id="transcript" placeholder="Paste your call transcript here..." rows="8" required></textarea>
+            </div>
+            <button id="save-btn" class="save-button">Save Transcript</button>
+            <div id="save-message" class="save-message"></div>
+        </section>
+
+        <section class="insights-section">
+            <div class="insight-card">
+                <h3>Total Calls</h3>
+                <p class="insight-value" id="total-calls">0</p>
+            </div>
+            <div class="insight-card">
+                <h3>Top Keywords</h3>
+                <div id="keywords-list" class="keywords-list">No calls yet</div>
+            </div>
+        </section>
+
+        <section class="calls-section">
+            <h2>Your Calls</h2>
+            <div id="calls-list" class="calls-list">
+                <p class="empty-state">No calls saved yet. Add your first transcript above!</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-date"></h2>
+            <div id="modal-transcript" class="modal-transcript"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
